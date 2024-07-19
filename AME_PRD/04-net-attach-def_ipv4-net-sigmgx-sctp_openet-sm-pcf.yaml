@@ -1,0 +1,43 @@
+apiVersion: k8s.cni.cncf.io/v1
+kind: NetworkAttachmentDefinition
+metadata:
+  annotations:
+    description: VLAN 2124 over bond0 for sigmgx
+  name: ipv4-net-sigmgx-sctp-a1
+  namespace: openet-sm-pcf
+spec:
+  config: |-
+    {
+      "cniVersion": "0.3.1",
+      "name": "ipv4-net-sigmgx-sctp-a1",
+      "type": "macvlan",
+      "master": "bond0.2124",
+      "mode": "bridge",
+      "ipam": {
+        "type": "static",
+        "addresses": [{"address": "10.107.156.129/26","gateway": "10.107.156.189"}],
+        "routes": [{"dst": "10.129.114.146/32"},{"dst": "10.129.114.147/32"},{"dst": "10.129.114.210/32"},{"dst": "10.129.114.211/32"},{"dst": "10.110.219.82/32"},{"dst": "10.110.219.83/32"},{"dst": "10.110.219.210/32"},{"dst": "10.110.219.211/32"},{"dst":"10.159.120.196/32"},{"dst":"10.159.121.68/32"},{"dst":"10.72.130.68/32"},{"dst":"10.159.120.36/32"},{"dst":"10.160.204.113/32"},{"dst":"10.107.96.240/29"},{"dst":"10.159.120.68/32"}]        
+      }
+    }
+---
+apiVersion: k8s.cni.cncf.io/v1
+kind: NetworkAttachmentDefinition
+metadata:
+  annotations:
+    description: VLAN 2124 over bond0 for sigmgx
+  name: ipv4-net-sigmgx-sctp-a2
+  namespace: openet-sm-pcf
+spec:
+  config: |-
+    {
+      "cniVersion": "0.3.1",
+      "name": "ipv4-net-sigmgx-sctp-a2",
+      "type": "macvlan",
+      "master": "bond0.2124",
+      "mode": "bridge",
+      "ipam": {
+        "type": "static",
+        "addresses": [{"address": "10.107.156.130/26","gateway": "10.107.156.189"}],
+        "routes": [{"dst": "10.129.114.146/32"},{"dst": "10.129.114.147/32"},{"dst": "10.129.114.210/32"},{"dst": "10.129.114.211/32"},{"dst": "10.110.219.82/32"},{"dst": "10.110.219.83/32"},{"dst": "10.110.219.210/32"},{"dst": "10.110.219.211/32"},{"dst":"10.159.120.196/32"},{"dst":"10.159.121.68/32"},{"dst":"10.72.130.68/32"},{"dst":"10.159.120.36/32"},{"dst":"10.160.204.113/32"},{"dst":"10.107.96.240/29"},{"dst":"10.159.120.68/32"}]
+      }
+    }
